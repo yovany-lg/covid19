@@ -77,7 +77,7 @@ const MyCard = () => (
       <IconButton
         aria-label="share"
         color="secondary"
-        href="https://www.facebook.com/sharer/sharer.php?u=URLENCODED_URL&t=TITLE"
+        href={`https://www.facebook.com/sharer/sharer.php?u=${'https://covid19-app-red.now.sh/'}&t="Estadísticas COVID-19"`}
         target="_blank"
       >
         <ShareIcon />
