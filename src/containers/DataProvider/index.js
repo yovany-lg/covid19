@@ -62,8 +62,7 @@ const loadCountry = (dispatch) =>
     let error;
     if (!cache.has(key)) {
       try {
-        const timeline = await getCountryTimeline(code);
-        const latest = await getCountryLatest(code);
+        const [timeline, latest] = await Promise.all([getCountryTimeline(code), getCountryLatest(code)]);
         countryData = { ...timeline, latest, code };
         cache.set(key, countryData);
       } catch (err) {
