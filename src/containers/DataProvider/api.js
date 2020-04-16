@@ -7,7 +7,7 @@ export const getCountryTimeline = (code) => {
 }
 
 export const getCountryLatest = (code) => {
-  return axios.get(`https://corona.lmao.ninja/countries/${code}`)
+  return axios.get(`https://corona.lmao.ninja/v2/countries/${code}`)
     .then(response => transformCountryLatest(response))
 }
 
@@ -19,7 +19,7 @@ export const getGeoInfo = () => {
 };
 
 export const getCountriesTotals = () => {
-  return axios.get('https://corona.lmao.ninja/countries').then((response) => {
+  return axios.get('https://corona.lmao.ninja/v2/countries').then((response) => {
       const { data } = response;
       return data.map(item => ({ id: item.countryInfo.iso3, value: item.deaths }));
   });
